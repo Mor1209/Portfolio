@@ -1,4 +1,12 @@
-import { useEffect, useRef, useState, Fragment, useMemo, memo } from 'react'
+import {
+  useEffect,
+  useRef,
+  useState,
+  Fragment,
+  useMemo,
+  memo,
+  useContext,
+} from 'react'
 
 import './App.css'
 import Canvas from './components/Canvas'
@@ -6,15 +14,18 @@ import { m, useScroll } from 'framer-motion'
 import proflePicture from './assets/PassportPicNeiyo.jpg'
 import NavBar from './components/NavBar'
 import Hero from './components/Hero'
+import { GitHubIcon, LinkedInIcon } from './components/SocialIcons'
+import { ThemeContext } from './context/themeContext'
 
 function App() {
-  const [themeIsDark, setThemeIsDark] = useState(true)
+  // const [themeIsDark, setThemeIsDark] = useState(true)
+
   const [isVisible, setIsVisible] = useState(false)
   const { scrollY } = useScroll()
-  let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  // let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
   useEffect(() => {
-    updateMode()
+    // updateMode()
 
     return scrollY.onChange(latest => {
       if (latest >= 10) setIsVisible(true)
@@ -25,23 +36,23 @@ function App() {
   // darkModeMediaQuery.addEventListener('change', updateModeWithoutTransitions)
   // window.addEventListener('storage', updateModeWithoutTransitions)
 
-  function updateMode() {
-    let isSystemDarkMode = darkModeMediaQuery.matches
-    let isDarkMode =
-      window.localStorage.isDarkMode === 'true' ||
-      (!('isDarkMode' in window.localStorage) && isSystemDarkMode)
+  // function updateMode() {
+  //   let isSystemDarkMode = darkModeMediaQuery.matches
+  //   let isDarkMode =
+  //     window.localStorage.isDarkMode === 'true' ||
+  //     (!('isDarkMode' in window.localStorage) && isSystemDarkMode)
 
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-      setThemeIsDark(false)
-    }
+  //   if (isDarkMode) {
+  //     document.documentElement.classList.add('dark')
+  //   } else {
+  //     document.documentElement.classList.remove('dark')
+  //     setThemeIsDark(false)
+  //   }
 
-    if (isDarkMode === isSystemDarkMode) {
-      delete window.localStorage.isDarkMode
-    }
-  }
+  //   if (isDarkMode === isSystemDarkMode) {
+  //     delete window.localStorage.isDarkMode
+  //   }
+  // }
 
   // function disableTransitionsTemporarily() {
   //   document.documentElement.classList.add('[&_*]:!transition-none')
@@ -55,13 +66,20 @@ function App() {
   //   updateMode()
   // }
 
-  console.log(themeIsDark)
+  function SocialLink({ icon: Icon, ...props }) {
+    return (
+      <a className='-m-1 p-1' {...props}>
+        <Icon className='h-10 w-10 fill-zinc-500 transition hover:fill-zinc-600 dark:fill-zinc-400 dark:hover:fill-zinc-300' />
+      </a>
+    )
+  }
+
   return (
     <div className='bg-white dark:bg-darkbg'>
       <NavBar isVisible={isVisible} />
       <div className='relative h-screen flex justify-center items-center flex-col gap-5'>
         <Canvas />
-        <Hero themeIsDark={themeIsDark} setThemeIsDark={setThemeIsDark} />
+        <Hero />
       </div>
       <section>
         <div className='container p-6 md:mx-auto pt-[12rem]'>
@@ -81,6 +99,14 @@ function App() {
                 Hi, I'm Moritz a Front End Developer !
               </h1>
               <p>I like to create websites with cutting adge techlogy.</p>
+              <div className='mt-6 flex gap-6'>
+                <SocialLink href='#' icon={GitHubIcon} className='mt-4'>
+                  Follow on GitHub
+                </SocialLink>
+                <SocialLink href='#' icon={LinkedInIcon} className='mt-4'>
+                  Follow on LinkedIn
+                </SocialLink>
+              </div>
             </div>
           </div>
         </div>

@@ -1,3 +1,6 @@
+import { useContext } from 'react'
+import { ThemeContext } from '../context/themeContext'
+
 function SunIcon(props) {
   return (
     <svg
@@ -31,35 +34,37 @@ function MoonIcon(props) {
 }
 
 export default function ModeToggle(props) {
-  function disableTransitionsTemporarily() {
-    document.documentElement.classList.add('[&_*]:!transition-none')
-    window.setTimeout(() => {
-      document.documentElement.classList.remove('[&_*]:!transition-none')
-    }, 0)
-  }
+  const { themeIsDark, toggleTheme } = useContext(ThemeContext)
 
-  function toggleMode() {
-    disableTransitionsTemporarily()
+  // function disableTransitionsTemporarily() {
+  //   document.documentElement.classList.add('[&_*]:!transition-none')
+  //   window.setTimeout(() => {
+  //     document.documentElement.classList.remove('[&_*]:!transition-none')
+  //   }, 0)
+  // }
 
-    let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    let isSystemDarkMode = darkModeMediaQuery.matches
-    let isDarkMode = document.documentElement.classList.toggle('dark')
+  // function toggleMode() {
+  //   disableTransitionsTemporarily()
 
-    if (isDarkMode === isSystemDarkMode) {
-      props.setThemeIsDark(false)
-      delete window.localStorage.isDarkMode
-    } else {
-      props.setThemeIsDark(true)
-      window.localStorage.isDarkMode = isDarkMode
-    }
-  }
+  //   let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  //   let isSystemDarkMode = darkModeMediaQuery.matches
+  //   let isDarkMode = document.documentElement.classList.toggle('dark')
+
+  //   if (isDarkMode === isSystemDarkMode) {
+  //     props.setThemeIsDark(false)
+  //     delete window.localStorage.isDarkMode
+  //   } else {
+  //     props.setThemeIsDark(true)
+  //     window.localStorage.isDarkMode = isDarkMode
+  //   }
+  // }
 
   return (
     <button
       type='button'
       aria-label='Toggle dark mode'
       className='group rounded-full bg-transparent px-3 py-2 ring-0 ring-zinc-900/5 backdrop-blur transition dark:ring-white/10 dark:hover:ring-white/20'
-      onClick={toggleMode}
+      onClick={toggleTheme}
     >
       <SunIcon className='h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600' />
       <MoonIcon className='hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-teal-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-teal-500' />

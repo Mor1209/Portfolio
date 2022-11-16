@@ -4,11 +4,14 @@ import App from './App'
 import './index.css'
 
 import { LazyMotion, domAnimation } from 'framer-motion'
+import { ThemeProvider } from './context/themeContext'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <LazyMotion features={domAnimation}>
-      <App />
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
     </LazyMotion>
   </React.StrictMode>
 )

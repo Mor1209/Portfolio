@@ -1,10 +1,13 @@
-import { Fragment, memo } from 'react'
+import { Fragment, memo, useContext } from 'react'
 import { m } from 'framer-motion'
 import { characters } from '../shared/constants'
+import { ThemeContext } from '../context/themeContext'
 
-const Hero = ({ themeIsDark }) => {
-  console.log('NameAnimation render')
-  console.log(themeIsDark)
+const Hero = () => {
+  const { themeIsDark } = useContext(ThemeContext)
+  // console.log('NameAnimation render')
+  // console.log(themeIsDark)
+
   return (
     <>
       <svg
