@@ -1,6 +1,11 @@
 import { Fragment, useEffect, useState } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import {
+  Bars3Icon,
+  BellIcon,
+  DocumentTextIcon,
+  XMarkIcon,
+} from '@heroicons/react/24/outline'
 import { m, AnimatePresence } from 'framer-motion'
 import DarkModeToggle from './DarkModeToggle'
 
@@ -86,7 +91,18 @@ export default function NavBar(props) {
                         </a>
                       </div>
                     </div>
-                    <div className='absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0'>
+                    <div className='absolute inset-y-0 right-0 flex items-center space-x-4 pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0'>
+                      <button
+                        type='button'
+                        className='relative inline-flex items-center rounded-md border border-transparent bg-indigo-500 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-600'
+                        onClick={() => props.resumeToggleHandler(true)}
+                      >
+                        <DocumentTextIcon
+                          className='-ml-1 mr-2 h-5 w-5'
+                          aria-hidden='true'
+                        />
+                        <span>Resume</span>
+                      </button>
                       <DarkModeToggle />
                     </div>
                   </div>
