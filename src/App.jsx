@@ -24,10 +24,12 @@ import {
 } from '@heroicons/react/24/outline'
 import Resume from './assets/Moritz_Hauptmann_-_Full_Stack_Developer.jpg'
 import ResumePDF from './assets/Moritz_Hauptmann_-_Full_Stack_Developer.pdf'
+import { icons } from './shared/constants'
+import { skills } from './shared/skills'
 
 function App() {
   // const [themeIsDark, setThemeIsDark] = useState(true)
-
+  const { themeIsDark } = useContext(ThemeContext)
   const [isVisible, setIsVisible] = useState(false)
   const [resumeDialog, setResumeDialog] = useState(false)
   const { scrollY } = useScroll()
@@ -200,6 +202,40 @@ function App() {
                 </SocialLink>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className='flex justify-center'>
+        <div className='container flex flex-col items-center justify-center p-6'>
+          <h1 className='text-4xl font-bold text-zinc-800 dark:text-zinc-100'>
+            My Skills
+          </h1>
+          <p className='description text-lg text-zinc-800 dark:text-zinc-100'>
+            Technologies and lenguages I use for creating web applications
+          </p>
+          <div className='grid justify-center grid-cols-4 md:grid-cols-7 gap-y-[10px] md:gap-y-[20px]'>
+            {skills.map(skill => (
+              <a
+                key={skill.name}
+                href={skill.url}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='item flex flex-col items-center justify-center group p-1 [&:nth-last-child(2)]:col-span-2 [&:nth-last-child(2)]:items-end [&:nth-last-child(2)]:mr-1 last:col-span-2 last:items-start last:ml-1 md:[&:nth-last-child(2)]:col-span-1 md:[&:nth-last-child(2)]:items-center md:[&:nth-last-child(2)]:mr-0 md:last:col-span-1 md:last:items-center md:last:ml-0'
+              >
+                <div>
+                  <img
+                    className='w-[60px] h-[60px] transition duration-300 group-hover:scale-110'
+                    src={
+                      themeIsDark && skill.imgDark ? skill.imgDark : skill.img
+                    }
+                    alt={skill.name}
+                  />
+                  <p className='text-center text-zinc-800 dark:text-zinc-100'>
+                    {skill.name}
+                  </p>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>

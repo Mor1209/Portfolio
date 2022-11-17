@@ -1,9 +1,11 @@
-import { useEffect, useRef } from 'react'
+import { useContext, useEffect, useRef } from 'react'
 
-import { icons } from '../shared/constants'
+import { skills } from '../shared/skills'
 import { m } from 'framer-motion'
+import { ThemeContext } from '../context/themeContext'
 
 const Canvas = () => {
+  const { themeIsDark } = useContext(ThemeContext)
   const canvasRef = useRef(null)
 
   useEffect(() => {
@@ -11,9 +13,9 @@ const Canvas = () => {
 
     if (!canvas) return
 
-    const images = icons.map(source => {
+    const images = skills.map(skill => {
       const image = document.createElement('img')
-      image.src = source
+      image.src = skill.img
       return image
     })
 

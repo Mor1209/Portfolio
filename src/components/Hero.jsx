@@ -65,7 +65,12 @@ const Hero = () => {
           transition={{
             duration: 0.4,
             delay: 1.4,
-            y: { duration: 0.6, yoyo: Infinity, ease: 'easeOut' },
+            y: {
+              duration: 0.6,
+              repeat: Infinity,
+              repeatType: 'reverse',
+              ease: 'easeOut',
+            },
           }}
           stroke={!themeIsDark ? '#27272A' : '#F4F4F5'}
           strokeLinecap='round'
