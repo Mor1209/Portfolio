@@ -28,16 +28,12 @@ import { icons } from './shared/constants'
 import { skills } from './shared/skills'
 
 function App() {
-  // const [themeIsDark, setThemeIsDark] = useState(true)
   const { themeIsDark } = useContext(ThemeContext)
   const [isVisible, setIsVisible] = useState(false)
   const [resumeDialog, setResumeDialog] = useState(false)
   const { scrollY } = useScroll()
-  // let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
   useEffect(() => {
-    // updateMode()
-
     return scrollY.onChange(latest => {
       if (latest >= 10) setIsVisible(true)
       if (latest < 10) setIsVisible(false)
@@ -45,39 +41,6 @@ function App() {
   }, [])
 
   const resumeToggleHandler = () => {}
-
-  // darkModeMediaQuery.addEventListener('change', updateModeWithoutTransitions)
-  // window.addEventListener('storage', updateModeWithoutTransitions)
-
-  // function updateMode() {
-  //   let isSystemDarkMode = darkModeMediaQuery.matches
-  //   let isDarkMode =
-  //     window.localStorage.isDarkMode === 'true' ||
-  //     (!('isDarkMode' in window.localStorage) && isSystemDarkMode)
-
-  //   if (isDarkMode) {
-  //     document.documentElement.classList.add('dark')
-  //   } else {
-  //     document.documentElement.classList.remove('dark')
-  //     setThemeIsDark(false)
-  //   }
-
-  //   if (isDarkMode === isSystemDarkMode) {
-  //     delete window.localStorage.isDarkMode
-  //   }
-  // }
-
-  // function disableTransitionsTemporarily() {
-  //   document.documentElement.classList.add('[&_*]:!transition-none')
-  //   window.setTimeout(() => {
-  //     document.documentElement.classList.remove('[&_*]:!transition-none')
-  //   }, 0)
-  // }
-
-  // function updateModeWithoutTransitions() {
-  //   disableTransitionsTemporarily()
-  //   updateMode()
-  // }
 
   function SocialLink({ icon: Icon, ...props }) {
     return (
@@ -220,11 +183,11 @@ function App() {
                 href={skill.url}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='item flex flex-col items-center justify-center group p-1 [&:nth-last-child(2)]:col-span-2 [&:nth-last-child(2)]:items-end [&:nth-last-child(2)]:mr-1 last:col-span-2 last:items-start last:ml-1 md:[&:nth-last-child(2)]:col-span-1 md:[&:nth-last-child(2)]:items-center md:[&:nth-last-child(2)]:mr-0 md:last:col-span-1 md:last:items-center md:last:ml-0'
+                className='item flex flex-col items-center justify-center group p-1 [&:nth-last-child(2)]:col-span-2 [&:nth-last-child(2)]:items-end [&:nth-last-child(2)]:mr-1 last:col-span-2 last:items-start last:ml-1 [&:nth-last-child(2)]:md:col-span-1 [&:nth-last-child(2)]:md:items-center [&:nth-last-child(2)]:md:mr-0 md:last:col-span-1 md:last:items-center md:last:ml-0'
               >
-                <div>
+                <div className='flex flex-col items-center justify-center'>
                   <img
-                    className='w-[60px] h-[60px] transition duration-300 group-hover:scale-110'
+                    className='w-[60px] h-[60px] flex transition duration-300 group-hover:scale-110'
                     src={
                       themeIsDark && skill.imgDark ? skill.imgDark : skill.img
                     }

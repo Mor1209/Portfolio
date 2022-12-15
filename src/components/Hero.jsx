@@ -5,8 +5,6 @@ import { ThemeContext } from '../context/themeContext'
 
 const Hero = () => {
   const { themeIsDark } = useContext(ThemeContext)
-  // console.log('NameAnimation render')
-  // console.log(themeIsDark)
 
   return (
     <>

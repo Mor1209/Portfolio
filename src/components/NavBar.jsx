@@ -9,9 +9,9 @@ import {
 import { m, AnimatePresence } from 'framer-motion'
 import DarkModeToggle from './DarkModeToggle'
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+// function classNames(...classes) {
+//   return classes.filter(Boolean).join(' ')
+// }
 
 export default function NavBar(props) {
   return (
