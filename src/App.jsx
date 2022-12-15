@@ -180,13 +180,17 @@ function App() {
             Technologies and lenguages I use for creating web applications
           </p>
           <div className='grid justify-center grid-cols-4 md:grid-cols-7 gap-y-[10px] md:gap-y-[20px]'>
-            {skills.map(skill => (
+            {skills.map((skill, idx) => (
               <a
                 key={skill.name}
                 href={skill.url}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='item flex flex-col items-center justify-center group p-1 md:[&:nth-last-child(2)]:col-span-1 [&:nth-last-child(2)]:col-span-2 [&:nth-last-child(2)]:items-end [&:nth-last-child(2)]:mr-1 last:col-span-2 last:items-start last:ml-1 [&:nth-last-child(2)]:md:items-center [&:nth-last-child(2)]:md:mr-0 md:last:col-span-1 md:last:items-center md:last:ml-0'
+                className={`item flex flex-col items-center justify-center group p-1 last:col-span-2 last:items-start last:ml-1 md:last:col-span-1 md:last:items-center md:last:ml-0${
+                  skills.length - 2 === idx
+                    ? ' col-span-2 md:col-span-1 items-end mr-1 md:items-center md:mr-0'
+                    : ''
+                }`}
               >
                 <div className='flex flex-col items-center justify-center'>
                   <img
@@ -210,6 +214,9 @@ function App() {
           <h1 className='text-4xl font-bold text-zinc-800 dark:text-zinc-100'>
             My Projects
           </h1>
+          <button className='rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10'>
+            Save Changes
+          </button>
         </div>
       </section>
     </div>
