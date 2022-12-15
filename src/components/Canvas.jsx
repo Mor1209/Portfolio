@@ -116,6 +116,19 @@ const Canvas = () => {
     animate()
 
     window.addEventListener('resize', setup)
+
+    return () => {
+      window.removeEventListener('resize', setup)
+      canvas.removeEventListener('mousemove', e => {
+        mouse.x = e.clientX
+        mouse.y = e.clientY + Math.abs(canvas.getBoundingClientRect().top)
+      })
+
+      canvas.removeEventListener('mouseleave', () => {
+        mouse.x = -1000
+        mouse.y = -1000
+      })
+    }
   }, [])
 
   return (

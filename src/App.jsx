@@ -136,7 +136,6 @@ function App() {
         <Canvas />
         <Hero />
         <ResumeDialog />
-        {/* {resumeDialog && <Dialog />} */}
       </div>
       <section>
         <div className='container p-6 md:mx-auto pt-[12rem]'>
@@ -155,7 +154,11 @@ function App() {
               <h1 className='text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl'>
                 Hi, I'm Moritz a Front End Developer !
               </h1>
-              <p>I like to create websites with cutting adge techlogy.</p>
+              <p className='text-zinc-800 dark:text-zinc-100 mt-5'>
+                I am passionate about building big web applications and I am
+                following a consistent desire of learning new tech skills in web
+                and cloud technologies.
+              </p>
               <div className='mt-6 flex gap-6'>
                 <SocialLink href='#' icon={GitHubIcon} className='mt-4'>
                   Follow on GitHub
@@ -183,7 +186,7 @@ function App() {
                 href={skill.url}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='item flex flex-col items-center justify-center group p-1 [&:nth-last-child(2)]:col-span-2 [&:nth-last-child(2)]:items-end [&:nth-last-child(2)]:mr-1 last:col-span-2 last:items-start last:ml-1 [&:nth-last-child(2)]:md:col-span-1 [&:nth-last-child(2)]:md:items-center [&:nth-last-child(2)]:md:mr-0 md:last:col-span-1 md:last:items-center md:last:ml-0'
+                className='item flex flex-col items-center justify-center group p-1 md:[&:nth-last-child(2)]:col-span-1 [&:nth-last-child(2)]:col-span-2 [&:nth-last-child(2)]:items-end [&:nth-last-child(2)]:mr-1 last:col-span-2 last:items-start last:ml-1 [&:nth-last-child(2)]:md:items-center [&:nth-last-child(2)]:md:mr-0 md:last:col-span-1 md:last:items-center md:last:ml-0'
               >
                 <div className='flex flex-col items-center justify-center'>
                   <img
@@ -202,7 +205,13 @@ function App() {
           </div>
         </div>
       </section>
-      <section></section>
+      <section className='flex justify-center'>
+        <div className='container flex flex-col items-center justify-center p-6'>
+          <h1 className='text-4xl font-bold text-zinc-800 dark:text-zinc-100'>
+            My Projects
+          </h1>
+        </div>
+      </section>
     </div>
   )
 }
