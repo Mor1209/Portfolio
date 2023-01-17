@@ -17,7 +17,7 @@ const ContactSection = () => {
                 <div className='col-span-6'>
                   <label
                     htmlFor='first-name'
-                    className='block text-sm font-medium text-gray-700'
+                    className='block text-sm font-medium text-zinc-800 dark:text-zinc-100'
                   >
                     Name
                   </label>
@@ -34,7 +34,7 @@ const ContactSection = () => {
                 <div className='col-span-6'>
                   <label
                     htmlFor='email-address'
-                    className='block text-sm font-medium text-gray-700'
+                    className='block text-sm font-medium  text-zinc-800 dark:text-zinc-100'
                   >
                     Email address
                   </label>
@@ -51,7 +51,7 @@ const ContactSection = () => {
                 <div className='col-span-6'>
                   <label
                     htmlFor='subject'
-                    className='block text-sm font-medium text-gray-700'
+                    className='block text-sm font-medium text-zinc-800 dark:text-zinc-100'
                   >
                     Subject
                   </label>
@@ -68,7 +68,7 @@ const ContactSection = () => {
                   <div className='flex justify-between'>
                     <label
                       htmlFor='message'
-                      className='block text-sm font-medium text-gray-700'
+                      className='block text-sm font-medium text-zinc-800 dark:text-zinc-100'
                     >
                       Message
                     </label>
@@ -96,7 +96,7 @@ const ContactSection = () => {
           </div>
 
           <div className='md:col-span-1 mt-5 md:ml-20'>
-            <h2 className='invisible md:visible font-medium'>
+            <h2 className='invisible md:visible font-medium text-zinc-800 dark:text-zinc-100'>
               Or connect through
             </h2>
             <div className='mt-2 flex md:flex-col md:gap-1'>
@@ -104,21 +104,27 @@ const ContactSection = () => {
                 <SocialLink href='#' icon={GitHubIcon} className=''>
                   Follow on GitHub
                 </SocialLink>
-                <h3 className='invisible md:visible font-medium'>GitHub</h3>
+                <h3 className='invisible md:visible font-medium text-zinc-800 dark:text-zinc-100'>
+                  GitHub
+                </h3>
               </div>
 
               <div className='md:flex md:items-center mt-3 md:gap-2'>
                 <SocialLink href='#' icon={LinkedInIcon} className=''>
                   Follow on LinkedIn
                 </SocialLink>
-                <h3 className='invisible md:visible font-medium'>LinkedIn</h3>
+                <h3 className='invisible md:visible font-medium text-zinc-800 dark:text-zinc-100'>
+                  LinkedIn
+                </h3>
               </div>
 
               <div className='md:flex md:items-center mt-3 md:gap-2'>
                 <SocialLink href='#' icon={EmailIcon} className=''>
                   Email me
                 </SocialLink>
-                <h3 className='invisible md:visible font-medium'>Email</h3>
+                <h3 className='invisible md:visible font-medium text-zinc-800 dark:text-zinc-100'>
+                  Email
+                </h3>
               </div>
             </div>
           </div>
