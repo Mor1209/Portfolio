@@ -45,7 +45,7 @@ const Hero = () => {
         transition={{ duration: 0.4, delay: 1.4 }}
         className='text-3xl text-center z-[1] overflow-hidden text-zinc-800 dark:text-zinc-100'
       >
-        {`I'm a front end developer`}
+        {`I'm a Full Stack Developer`}
       </m.p>
       <svg
         key={`${themeIsDark}-arrow`}

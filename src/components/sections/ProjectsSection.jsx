@@ -1,10 +1,127 @@
 import React, { useEffect, useState } from 'react'
+import profilePicture from '../../assets/PassportPicNeiyo.jpg'
+import { projects } from '../../shared/projects'
+import { GitHubIcon } from '../SocialIcons'
+import SocialLink from '../SocialLink'
+import react from '../../assets/icons/react.svg'
+import nodejs from '../../assets/icons/nodejs.svg'
+import materialUi from '../../assets/icons/materialUi.svg'
+import sequelize from '../../assets/icons/sequelize.svg'
+import screenshot1 from '../../assets/Screenshot1.png'
 
 const ProjectsSection = () => {
   const [filter, setFilter] = useState('all')
 
   const filterHandler = e => {
     setFilter(e.currentTarget.id)
+  }
+
+  const Projects = () => {
+    return (
+      <>
+        {projects.map((project, index) => (
+          <div
+            key={project.id}
+            className={`item flex gap-[20px] lg:gap-[50px] w-full px-[5vw] md:min-h-[60vh] mb-20 md:my-10 ${
+              index % 2 === 1
+                ? 'flex-col lg:flex-row'
+                : 'flex-col lg:flex-row-reverse'
+            }`}
+          >
+            <div data-scroll data-scroll-speed='3' className='lg:flex-1'>
+              <div className='border-[#888] border-2 rounded-[20px] overflow-hidden'>
+                <div className=''>
+                  <img
+                    className='w-full h-auto rounded-[12px] border-black border-[8px]'
+                    src={screenshot1}
+                    alt=''
+                  />
+                </div>
+              </div>
+            </div>
+            <div className='item-info lg:flex-1'>
+              <h1 className='text-3xl text-zinc-800 dark:text-zinc-100'>
+                {project.title}
+              </h1>
+              <p className='text-[20px] text-justify my-3 text-zinc-800 dark:text-zinc-100'>
+                {project.description}
+              </p>
+
+              <div className='flex gap-[5px]'>
+                {/* {project.technologies.map(tech => (
+                  <img
+                    key={tech}
+                    className='w-[30px] h-[30px]'
+                    src={tech}
+                    alt=''
+                  />
+                ))} */}
+                <img
+                  key='react'
+                  className='w-[30px] h-[30px]'
+                  src={react}
+                  alt=''
+                />
+                <img
+                  key='nodejs'
+                  className='w-[30px] h-[30px]'
+                  src={nodejs}
+                  alt=''
+                />
+                <img
+                  key='materialUi'
+                  className='w-[30px] h-[30px]'
+                  src={materialUi}
+                  alt=''
+                />
+                <img
+                  key='sequelize'
+                  className='w-[30px] h-[30px]'
+                  src={sequelize}
+                  alt=''
+                />
+              </div>
+
+              <div className='flex mt-[25px] gap-[20px]'>
+                <a
+                  href={project.demo}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='h-[45px] px-[15px] text-white rounded transition duration-300 flex items-center gap-[10px] bg-[#1876d2] hover:bg-[#2884e0]'
+                >
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke-width='1.5'
+                    stroke='currentColor'
+                    class='w-6 h-6'
+                  >
+                    <path
+                      stroke-linecap='round'
+                      stroke-linejoin='round'
+                      d='M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25'
+                    />
+                  </svg>
+                  <span> Live Demo</span>
+                </a>
+                <a
+                  href={project.github}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='h-[45px] px-[15px] text-white rounded transition duration-300 flex items-center gap-[10px] bg-[#1b222b] hover:bg-[#191e25]'
+                >
+                  <SocialLink href='#' icon={GitHubIcon} className=''>
+                    Follow on GitHub
+                  </SocialLink>
+                  <span> View Github</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </>
+    )
   }
 
   return (
@@ -60,6 +177,21 @@ const ProjectsSection = () => {
             Machine Learning
           </button>
         </div>
+        <Projects />
+        {/* <div className='flex flex-row mt-5 w-full md:w-[70%]'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 rounded-md ring-1 ring-zinc-900/5 shadow-lg w-full'>
+            <div className='h-[25vh] w-full overflow-hidden'>
+              <img
+                src={profilePicture}
+                alt=''
+                className='w-full h-full object-cover'
+              />
+            </div>
+            <div>
+              <h1>Text</h1>
+            </div>
+          </div>
+        </div> */}
       </div>
     </section>
   )

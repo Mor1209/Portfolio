@@ -69,25 +69,25 @@ export default function NavBar(props) {
                           href='#'
                           className='inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-indigo-500'
                         >
-                          Dashboard
+                          Me
                         </a>
                         <a
                           href='#'
                           className='inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700'
                         >
-                          Team
+                          My Skills
                         </a>
                         <a
                           href='#'
                           className='inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700'
                         >
-                          Projects
+                          My Projects
                         </a>
                         <a
                           href='#'
                           className='inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700'
                         >
-                          Calendar
+                          Get in Touch
                         </a>
                       </div>
                     </div>

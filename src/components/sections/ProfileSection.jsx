@@ -19,18 +19,30 @@ const ProfileSection = () => {
 
           <div className='lg:order-first lg:row-span-2 justify-self-end'>
             <h1 className='text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl'>
-              Hi, I'm Moritz a Front End Developer !
+              Who am I ?
             </h1>
             <p className='text-zinc-800 dark:text-zinc-100 mt-5'>
-              I am passionate about building big web applications and I am
-              following a consistent desire of learning new tech skills in web
-              and cloud technologies.
+              My Name is Moritz. Passionate about computers since the start of
+              my secondary education. Following my passion I started with
+              programming (Java and Python) in high school. Studying at RMIT
+              helped me to build upon my soft skills and to advance in Software
+              Development. I am following a consistent desire of learning new
+              tech skills and enjoy learning skills needed for new roles and
+              jobs.
             </p>
             <div className='mt-6 flex gap-6'>
-              <SocialLink href='#' icon={GitHubIcon} className='mt-4'>
+              <SocialLink
+                href='https://github.com/Mor1209'
+                icon={GitHubIcon}
+                className='mt-4'
+              >
                 Follow on GitHub
               </SocialLink>
-              <SocialLink href='#' icon={LinkedInIcon} className='mt-4'>
+              <SocialLink
+                href='https://www.linkedin.com/in/moritz-hauptmann/'
+                icon={LinkedInIcon}
+                className='mt-4'
+              >
                 Follow on LinkedIn
               </SocialLink>
               <SocialLink href='#' icon={EmailIcon} className='mt-4'>
