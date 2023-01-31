@@ -1,12 +1,17 @@
 import React from 'react'
 import SocialLink from '../SocialLink'
 import { GitHubIcon, LinkedInIcon, EmailIcon } from '../SocialIcons'
+import { useNav } from '../../hooks/useNav'
 
 const ContactSection = () => {
+  const contactRef = useNav('contact')
   return (
-    <section className='flex justify-center'>
+    <section id='contact' className='flex justify-center pt-[4rem] mt-[-4rem]'>
       <div className='container flex flex-col items-center justify-center p-6'>
-        <h1 className='text-4xl font-bold text-zinc-800 dark:text-zinc-100'>
+        <h1
+          ref={contactRef}
+          className='text-4xl font-bold text-zinc-800 dark:text-zinc-100'
+        >
           Get in Touch
         </h1>
 
@@ -101,30 +106,42 @@ const ContactSection = () => {
             </h2>
             <div className='mt-2 flex md:flex-col md:gap-1'>
               <div className='md:flex items-center mt-3 md:gap-2'>
-                <SocialLink href='#' icon={GitHubIcon} className=''>
-                  Follow on GitHub
+                <SocialLink
+                  href='https://github.com/Mor1209'
+                  icon={GitHubIcon}
+                  className=''
+                  title='Follow on GitHub'
+                >
+                  <h3 className='invisible md:visible font-medium text-zinc-800 dark:text-zinc-100'>
+                    GitHub
+                  </h3>
                 </SocialLink>
-                <h3 className='invisible md:visible font-medium text-zinc-800 dark:text-zinc-100'>
-                  GitHub
-                </h3>
               </div>
 
               <div className='md:flex md:items-center mt-3 md:gap-2'>
-                <SocialLink href='#' icon={LinkedInIcon} className=''>
-                  Follow on LinkedIn
+                <SocialLink
+                  href='https://www.linkedin.com/in/moritz-hauptmann/'
+                  icon={LinkedInIcon}
+                  className=''
+                  title='Follow on LinkedIn'
+                >
+                  <h3 className='invisible md:visible font-medium text-zinc-800 dark:text-zinc-100'>
+                    LinkedIn
+                  </h3>
                 </SocialLink>
-                <h3 className='invisible md:visible font-medium text-zinc-800 dark:text-zinc-100'>
-                  LinkedIn
-                </h3>
               </div>
 
               <div className='md:flex md:items-center mt-3 md:gap-2'>
-                <SocialLink href='#' icon={EmailIcon} className=''>
-                  Email me
+                <SocialLink
+                  href='mailto:mohauptmann@gmail.com'
+                  icon={EmailIcon}
+                  className=''
+                  title='Email me'
+                >
+                  <h3 className='invisible md:visible font-medium text-zinc-800 dark:text-zinc-100'>
+                    Email
+                  </h3>
                 </SocialLink>
-                <h3 className='invisible md:visible font-medium text-zinc-800 dark:text-zinc-100'>
-                  Email
-                </h3>
               </div>
             </div>
           </div>

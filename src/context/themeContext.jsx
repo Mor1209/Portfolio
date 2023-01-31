@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useState } from 'react'
 
 const getTheme = () => {
   if (
@@ -20,10 +20,7 @@ export const ThemeProvider = ({ children }) => {
   const [themeIsDark, setThemeIsDark] = useState(getTheme)
 
   const toggleTheme = () => {
-    // document.documentElement.classList.toggle('dark')
     setThemeIsDark(prev => {
-      console.log('setting theme to ' + !prev)
-
       if (!prev) {
         document.documentElement.classList.add('dark')
         localStorage.setItem('theme', 'dark')

@@ -2,11 +2,13 @@ import React from 'react'
 import profilePicture from '../../assets/PassportPicNeiyo.jpg'
 import { GitHubIcon, LinkedInIcon, EmailIcon } from '../SocialIcons'
 import SocialLink from '../SocialLink'
+import { useNav } from '../../hooks/useNav'
 
 const ProfileSection = () => {
+  const profileRef = useNav('profile')
   return (
-    <section>
-      <div className='container mx-auto flex p-6 pt-[12rem] items-center justify-center'>
+    <section id='profile' className='pt-[4rem] mt-[-4rem]'>
+      <div className='container mx-auto flex p-6 items-center justify-center'>
         <div className='grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:gap-y-12'>
           <div className='flex max-w-xs px-2.5 justify-self-center lg:justify-self-end'>
             <img
@@ -18,7 +20,10 @@ const ProfileSection = () => {
           </div>
 
           <div className='lg:order-first lg:row-span-2 justify-self-end'>
-            <h1 className='text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl'>
+            <h1
+              ref={profileRef}
+              className='text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl'
+            >
               Who am I ?
             </h1>
             <p className='text-zinc-800 dark:text-zinc-100 mt-5'>
@@ -35,19 +40,20 @@ const ProfileSection = () => {
                 href='https://github.com/Mor1209'
                 icon={GitHubIcon}
                 className='mt-4'
-              >
-                Follow on GitHub
-              </SocialLink>
+                title='Follow on GitHub'
+              />
               <SocialLink
                 href='https://www.linkedin.com/in/moritz-hauptmann/'
                 icon={LinkedInIcon}
                 className='mt-4'
-              >
-                Follow on LinkedIn
-              </SocialLink>
-              <SocialLink href='#' icon={EmailIcon} className='mt-4'>
-                Email me
-              </SocialLink>
+                title='Follow on LinkedIn'
+              />
+              <SocialLink
+                href='mailto:mohauptmann@gmail.com'
+                icon={EmailIcon}
+                className='mt-4'
+                title='Email me'
+              />
             </div>
           </div>
         </div>

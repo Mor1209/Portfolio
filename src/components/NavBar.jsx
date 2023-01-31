@@ -8,12 +8,21 @@ import {
 } from '@heroicons/react/24/outline'
 import { m, AnimatePresence } from 'framer-motion'
 import DarkModeToggle from './DarkModeToggle'
+import { useContext } from 'react'
+import { NavContext } from '../context/navContext'
 
 // function classNames(...classes) {
 //   return classes.filter(Boolean).join(' ')
 // }
 
 export default function NavBar(props) {
+  const { activeNavLinkId, setActiveNavLinkId } = useContext(NavContext)
+
+  const navHandler = e => {
+    const path = e.currentTarget.href
+    setActiveNavLinkId(path.split('/#').at(-1))
+  }
+
   return (
     <AnimatePresence>
       {props.isVisible && (
@@ -48,7 +57,7 @@ export default function NavBar(props) {
                       </Disclosure.Button>
                     </div>
                     <div className='flex flex-1 items-center justify-center sm:items-stretch sm:justify-start'>
-                      <div className='flex flex-shrink-0 items-center'>
+                      <a href='#' className='flex flex-shrink-0 items-center'>
                         <h1 className='font-sono text-2xl pr-5 text-zinc-800 dark:text-zinc-100'>
                           Moritz
                         </h1>
@@ -62,30 +71,56 @@ export default function NavBar(props) {
                           src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600'
                           alt='Your Company'
                         /> */}
-                      </div>
+                      </a>
+
                       <div className='hidden sm:ml-6 sm:flex sm:space-x-8'>
                         {/* Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" */}
                         <a
-                          href='#'
-                          className='inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-indigo-500'
+                          // id='profile'
+                          href='#profile'
+                          onClick={navHandler}
+                          className={`inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium text-gray-500 ${
+                            activeNavLinkId === 'profile'
+                              ? 'border-indigo-500 text-indigo-500'
+                              : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                          }
+                          `}
                         >
                           Me
                         </a>
                         <a
-                          href='#'
-                          className='inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                          href='#skills'
+                          onClick={navHandler}
+                          className={`inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium text-gray-500 ${
+                            activeNavLinkId === 'skills'
+                              ? 'border-indigo-500 text-indigo-500'
+                              : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                          }
+                          `}
                         >
                           My Skills
                         </a>
                         <a
-                          href='#'
-                          className='inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                          href='#projects'
+                          onClick={navHandler}
+                          className={`inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium text-gray-500 ${
+                            activeNavLinkId === 'projects'
+                              ? 'border-indigo-500 text-indigo-500'
+                              : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                          }
+                          `}
                         >
                           My Projects
                         </a>
                         <a
-                          href='#'
-                          className='inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                          href='#contact'
+                          onClick={navHandler}
+                          className={`inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium text-gray-500 ${
+                            activeNavLinkId === 'contact'
+                              ? 'border-indigo-500 text-indigo-500'
+                              : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                          }
+                          `}
                         >
                           Get in Touch
                         </a>
@@ -112,28 +147,32 @@ export default function NavBar(props) {
                     {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" */}
                     <Disclosure.Button
                       as='a'
-                      href='#'
+                      href='#profile'
+                      onClick={navHandler}
                       className='block border-l-4 border-indigo-500 bg-indigo-50 py-2 pl-3 pr-4 text-base font-medium text-indigo-700'
                     >
                       Me
                     </Disclosure.Button>
                     <Disclosure.Button
                       as='a'
-                      href='#'
+                      href='#skills'
+                      onClick={navHandler}
                       className='block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700'
                     >
                       My Skills
                     </Disclosure.Button>
                     <Disclosure.Button
                       as='a'
-                      href='#'
+                      href='#projects'
+                      onClick={navHandler}
                       className='block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700'
                     >
                       My Projects
                     </Disclosure.Button>
                     <Disclosure.Button
                       as='a'
-                      href='#'
+                      href='#contact'
+                      onClick={navHandler}
                       className='block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700'
                     >
                       Get in Touch

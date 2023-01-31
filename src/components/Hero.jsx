@@ -47,35 +47,37 @@ const Hero = () => {
       >
         {`I'm a Full Stack Developer`}
       </m.p>
-      <svg
-        key={`${themeIsDark}-arrow`}
-        xmlns='http://www.w3.org/2000/svg'
-        fill='none'
-        viewBox='0 2 24 24'
-        strokeWidth={1.5}
-        stroke='currentColor'
-        className='absolute w-8 h-[5rem] bottom-[6vh] left-[calc(50%-16px)]'
-      >
-        <m.path
-          // animate={{ y: ['50%', '-50%'] }}
-          animate={{ opacity: 1, y: ['20%', '-20%'] }}
-          initial={{ opacity: 0 }}
-          transition={{
-            duration: 0.4,
-            delay: 1.4,
-            y: {
-              duration: 0.6,
-              repeat: Infinity,
-              repeatType: 'reverse',
-              ease: 'easeOut',
-            },
-          }}
-          stroke={!themeIsDark ? '#27272A' : '#F4F4F5'}
-          strokeLinecap='round'
-          strokeLinejoin='round'
-          d='M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5'
-        />
-      </svg>
+      <a href='#profile'>
+        <svg
+          key={`${themeIsDark}-arrow`}
+          xmlns='http://www.w3.org/2000/svg'
+          fill='none'
+          viewBox='0 2 24 24'
+          strokeWidth={1.5}
+          stroke='currentColor'
+          className='absolute w-8 h-[5rem] bottom-[6vh] left-[calc(50%-16px)]'
+        >
+          <m.path
+            // animate={{ y: ['50%', '-50%'] }}
+            animate={{ opacity: 1, y: ['20%', '-20%'] }}
+            initial={{ opacity: 0 }}
+            transition={{
+              duration: 0.4,
+              delay: 1.4,
+              y: {
+                duration: 0.6,
+                repeat: Infinity,
+                repeatType: 'reverse',
+                ease: 'easeOut',
+              },
+            }}
+            stroke={!themeIsDark ? '#27272A' : '#F4F4F5'}
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            d='M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5'
+          />
+        </svg>
+      </a>
     </>
   )
 }

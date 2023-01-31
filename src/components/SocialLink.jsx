@@ -1,9 +1,12 @@
 import React from 'react'
 
-const SocialLink = ({ icon: Icon, ...props }) => {
+const SocialLink = ({ icon: Icon, title, children, ...props }) => {
   return (
-    <a className='-m-1 p-1' {...props}>
-      <Icon className='h-10 w-10 fill-zinc-500 transition hover:fill-zinc-600 dark:fill-zinc-400 dark:hover:fill-zinc-300' />
+    <a className='-m-1 p-1' title={title} {...props}>
+      <div className='flex flex-nowrap items-center gap-2'>
+        <Icon className='h-10 w-10 fill-zinc-500 transition hover:fill-zinc-600 dark:fill-zinc-400 dark:hover:fill-zinc-300' />
+        {children}
+      </div>
     </a>
   )
 }

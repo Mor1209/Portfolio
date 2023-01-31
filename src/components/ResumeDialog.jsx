@@ -5,8 +5,8 @@ import {
   CheckIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline'
-import Resume from '../assets/Moritz_Hauptmann_-_Full_Stack_Developer.jpg'
-import ResumePDF from '../assets/Moritz_Hauptmann_-_Full_Stack_Developer.pdf'
+import Resume from '../assets/Moritz_Hauptmann-Full_Stack_Developer.jpg'
+import ResumePDF from '../assets/Moritz_Hauptmann-Full_Stack_Developer.pdf'
 
 const ResumeDialog = ({ resumeDialog, resumeToggleHandler }) => {
   return (
