@@ -73,8 +73,8 @@ const ContactSection = () => {
     }
 
     try {
-      const result = await emailjs.sendForm(...emailjsConfig)
-      console.log(result.text)
+      await emailjs.sendForm(...emailjsConfig)
+
       resetName()
       resetEmail()
       resetSubject()
