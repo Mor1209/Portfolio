@@ -11,11 +11,6 @@ const isNotEmpty = value => value.trim() !== ''
 const isEmail = value => value.includes('@')
 
 const ContactSection = () => {
-  const [name, setName] = useState()
-  const [email, setEmail] = useState()
-  const [subject, setSubject] = useState()
-  const [message, setMessage] = useState()
-
   const contactRef = useNav('contact')
   const formRef = useRef()
 
