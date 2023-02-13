@@ -19,6 +19,7 @@ import SkillsSection from './components/sections/SkillsSection'
 import ProjectSection from './components/sections/ProjectsSection'
 import ContactSection from './components/sections/ContactSection'
 import ResumeDialog from './components/ResumeDialog'
+// import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 
 function App() {
   const [isVisible, setIsVisible] = useState(false)
