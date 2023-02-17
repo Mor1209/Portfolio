@@ -3,19 +3,19 @@ import { useInView } from 'framer-motion'
 import { NavContext } from '../context/navContext'
 
 export const useNav = navLinkId => {
-  const ref = useRef(null)
+  const ref = useRef()
 
   const { setActiveNavLinkId } = useContext(NavContext)
 
-  const isInView = useInView(ref, {
-    margin: '-20% 0% -30% 0%',
+  const inView = useInView(ref, {
+    margin: '-40% 0% -40% 0%',
   })
 
   useEffect(() => {
-    if (isInView) {
+    if (inView) {
       setActiveNavLinkId(navLinkId)
     }
-  }, [isInView, setActiveNavLinkId, navLinkId])
+  }, [inView, setActiveNavLinkId, navLinkId])
 
-  return ref
+  return [inView, ref]
 }
