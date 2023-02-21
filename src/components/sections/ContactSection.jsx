@@ -86,7 +86,7 @@ const ContactSection = () => {
     'border-red-300 focus:border-red-500 focus:ring-red-500'
 
   return (
-    <SectionContainer id='contact' additionalStyles={'flex-col'}>
+    <SectionContainer id='contact' additionalStyles={'flex-col md:pb-20'}>
       <h1 className='text-4xl font-bold text-zinc-800 dark:text-zinc-100'>
         Get in Touch
       </h1>
