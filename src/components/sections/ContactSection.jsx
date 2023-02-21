@@ -179,7 +179,6 @@ const ContactSection = () => {
                 <div className='flex justify-between'>
                   <label
                     htmlFor='message'
-                    onChange={e => setMessage(e.target.value)}
                     className='block text-sm font-medium text-zinc-800 dark:text-zinc-100'
                   >
                     Message

@@ -149,7 +149,11 @@ export default function NavBar(props) {
                       as='a'
                       href='#profile'
                       onClick={navHandler}
-                      className='block border-l-4 border-indigo-500 bg-indigo-50 py-2 pl-3 pr-4 text-base font-medium text-indigo-700'
+                      className={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${
+                        activeNavLinkId === 'profile'
+                          ? 'border-indigo-500 bg-indigo-50 text-indigo-700'
+                          : 'border-transparent text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700'
+                      }`}
                     >
                       Me
                     </Disclosure.Button>
@@ -157,7 +161,11 @@ export default function NavBar(props) {
                       as='a'
                       href='#skills'
                       onClick={navHandler}
-                      className='block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700'
+                      className={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${
+                        activeNavLinkId === 'skills'
+                          ? 'border-indigo-500 bg-indigo-50 text-indigo-700'
+                          : 'border-transparent text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700'
+                      }`}
                     >
                       My Skills
                     </Disclosure.Button>
@@ -165,7 +173,11 @@ export default function NavBar(props) {
                       as='a'
                       href='#projects'
                       onClick={navHandler}
-                      className='block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700'
+                      className={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${
+                        activeNavLinkId === 'projects'
+                          ? 'border-indigo-500 bg-indigo-50 text-indigo-700'
+                          : 'border-transparent text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700'
+                      }`}
                     >
                       My Projects
                     </Disclosure.Button>
@@ -173,10 +185,16 @@ export default function NavBar(props) {
                       as='a'
                       href='#contact'
                       onClick={navHandler}
-                      className='block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700'
+                      className={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${
+                        activeNavLinkId === 'contact'
+                          ? 'border-indigo-500 bg-indigo-50 text-indigo-700'
+                          : 'border-transparent text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700'
+                      }`}
                     >
                       Get in Touch
                     </Disclosure.Button>
+
+                    <DarkModeToggle />
                   </div>
                 </Disclosure.Panel>
               </>
