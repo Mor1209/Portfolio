@@ -11,8 +11,8 @@ const SkillsSection = () => {
       <h1 className='text-4xl font-bold text-zinc-800 dark:text-zinc-100'>
         My Skills
       </h1>
-      <p className='description text-[18px] text-zinc-800 dark:text-zinc-100 text-center'>
-        Technologies and lenguages I use for creating web applications
+      <p className='description text-[18px] text-zinc-800 dark:text-zinc-100 text-center mt-5'>
+        Technologies and languages I use for creating web applications
       </p>
       <SkillsGrid />
     </SectionContainer>
