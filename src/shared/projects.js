@@ -1,5 +1,6 @@
 import screenshot1 from '../assets/Screenshot1.png'
 import screenshotBookeroo from '../assets/Screenshot_Bookeroo.png'
+import screenshotMessenger from '../assets/Screenshot_Messenger.png'
 
 import react from '../assets/icons/react.svg'
 import nodejs from '../assets/icons/nodejs.svg'
@@ -10,10 +11,23 @@ import figma from '../assets/icons/figma.svg'
 import jest from '../assets/icons/jest.svg'
 import springboot from '../assets/icons/springboot.svg'
 import docker from '../assets/icons/docker.svg'
+import next from '../assets/icons/next.svg'
+import prisma from '../assets/icons/prisma.svg'
+import graphql from '../assets/icons/graphql.svg'
+import apollo from '../assets/icons/apollo.svg'
+import tailwindcss from '../assets/icons/tailwindcss.svg'
 
 export const projects = [
   {
     id: 0,
+    img: screenshotMessenger,
+    title: 'Messenger',
+    description: `This is a real time chatting application, which works over websockets. Users can signup with google and create conversations with one and another and even group chats with multiple people. All conversations can be edited so that people can be added or removed to chats`,
+    technologies: [next, prisma, graphql, apollo, tailwindcss, nodejs],
+    github: 'https://github.com/Mor1209/messenger',
+  },
+  {
+    id: 1,
     img: screenshot1,
     title: 'Blogging Website',
     description:
@@ -23,7 +37,7 @@ export const projects = [
     github: 'https://github.com/Mor1209/rmit-fwp-assignment',
   },
   {
-    id: 1,
+    id: 2,
     img: screenshotBookeroo,
     title: 'Library Managment System',
     description: `Team Project completed with four people.

@@ -7,19 +7,19 @@ import SectionContainer from '../SectionContainer'
 import Project from '../Project'
 
 const ProjectsSection = () => {
-  const [filter, setFilter] = useState('all')
+  // const [filter, setFilter] = useState('all')
   const projectsRef = useNav('projects')
 
-  const filterHandler = e => {
-    setFilter(e.currentTarget.id)
-  }
+  // const filterHandler = e => {
+  //   setFilter(e.currentTarget.id)
+  // }
 
   return (
     <SectionContainer id='projects' additionalStyles={'flex-col'}>
       <h1 className='text-4xl font-bold text-zinc-800 dark:text-zinc-100'>
         My Projects
       </h1>
-      <div className='flex flex-wrap gap-3 mt-6' role='group'>
+      {/* <div className='flex flex-wrap gap-3 mt-6' role='group'>
         <button
           type='button'
           id='all'
@@ -65,7 +65,7 @@ const ProjectsSection = () => {
         >
           Machine Learning
         </button>
-      </div>
+      </div> */}
       {projects.map((project, index) => (
         <Project project={project} index={index} key={project.id} />
       ))}

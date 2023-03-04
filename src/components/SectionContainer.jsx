@@ -30,7 +30,10 @@ const SectionContainer = ({ id, children, additionalStyles }) => {
   return (
     <section ref={ref} id={id} className='pt-[4rem] mt-[-4rem] overflow-hidden'>
       <m.div
-        initial={{ opacity: 0, x: `${id === 'skills' ? '-' : ''}100vw` }}
+        initial={{
+          opacity: 0,
+          x: `${id === 'skills' || id === 'contact' ? '' : '-'}100vw`,
+        }}
         animate={animation}
         className={`container mx-auto flex p-6 pt-10 lg:pt-40 items-center justify-center ${additionalStyles}`}
       >
