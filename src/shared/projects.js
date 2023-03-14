@@ -24,6 +24,7 @@ export const projects = [
     title: 'Messenger',
     description: `This is a real time chatting application, which works over websockets. Users can signup with google and create conversations with one and another and even group chats with multiple people. All conversations can be edited so that people can be added or removed to chats`,
     technologies: [next, prisma, graphql, apollo, tailwindcss, nodejs],
+    demo: 'https://messenger-production-4620.up.railway.app/',
     github: 'https://github.com/Mor1209/messenger',
   },
   {
