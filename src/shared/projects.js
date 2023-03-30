@@ -44,7 +44,7 @@ export const projects = [
     img: screenshotPortfolio,
     title: 'Portfolio Website',
     description:
-      'Portfolio website with my most intresting projects, which includes my resume, a contact form and some animations',
+      'Portfolio website with my most interesting projects, which includes my resume, a contact form and some animations',
     technologies: [react, tailwindcss, vite],
     demo: 'https://moritz.vercel.app/',
     github: 'https://github.com/Mor1209/Portfolio',
