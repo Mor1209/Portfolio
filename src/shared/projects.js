@@ -1,6 +1,7 @@
 import screenshot1 from '../assets/Screenshot1.png'
 import screenshotBookeroo from '../assets/Screenshot_Bookeroo.png'
 import screenshotMessenger from '../assets/Screenshot_Messenger.png'
+import screenshotPortfolio from '../assets/Screenshot_Portfolio.png'
 
 import react from '../assets/icons/react.svg'
 import nodejs from '../assets/icons/nodejs.svg'
@@ -16,6 +17,7 @@ import prisma from '../assets/icons/prisma.svg'
 import graphql from '../assets/icons/graphql.svg'
 import apollo from '../assets/icons/apollo.svg'
 import tailwindcss from '../assets/icons/tailwindcss.svg'
+import vite from '../assets/icons/vite.svg'
 
 export const projects = [
   {
@@ -39,6 +41,16 @@ export const projects = [
   },
   {
     id: 2,
+    img: screenshotPortfolio,
+    title: 'Portfolio Website',
+    description:
+      'Portfolio website with my most intresting projects, which includes my resume, a contact form and some animations',
+    technologies: [react, tailwindcss, vite],
+    demo: 'https://moritz.vercel.app/',
+    github: 'https://github.com/Mor1209/Portfolio',
+  },
+  {
+    id: 3,
     img: screenshotBookeroo,
     title: 'Library Managment System',
     description: `Team Project completed with four people.

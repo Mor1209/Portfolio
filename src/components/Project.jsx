@@ -33,8 +33,8 @@ const Project = ({ project, index }) => {
       <m.div
         initial={{
           opacity: `${index === 0 ? 1 : 0}`,
-          x: `${index % 2 === 1 && index !== 0 ? '' : '-100vw'}${
-            index % 2 !== 1 && index !== 0 ? '' : '100vw'
+          x: `${index % 2 === 1 && index !== 0 ? '-100vw' : ''}${
+            index % 2 !== 1 && index !== 0 ? '100vw' : ''
           }`,
         }}
         animate={animation}

@@ -32,7 +32,7 @@ const SectionContainer = ({ id, children, additionalStyles }) => {
       <m.div
         initial={{
           opacity: 0,
-          x: `${id === 'skills' || id === 'contact' ? '' : '-'}100vw`,
+          x: `${id === 'skills' ? '-' : ''}100vw`,
         }}
         animate={animation}
         className={`container mx-auto flex p-6 pt-10 lg:pt-40 items-center justify-center ${additionalStyles}`}
