@@ -24,12 +24,17 @@ const ProfileSection = () => {
             Who am I ?
           </h1>
           <p className='text-[18px] text-justify text-zinc-800 dark:text-zinc-100 mt-5'>
-            My Name is Moritz. Passionate about computers since the start of my
-            secondary education. Following my passion I started with programming
-            (Java and Python) in high school. Studying at RMIT helped me to
-            build upon my soft skills and to advance in Software Development. I
-            am following a consistent desire of learning new tech skills and
-            enjoy learning skills needed for new roles and jobs.
+            My Name is Moritz. As a computer enthusiast from a young age, I've
+            always been drawn to programming languages and their potential to
+            transform the world. In high school, I began exploring programming
+            languages like Java and Python, and my love for coding only grew
+            stronger.
+            <br />
+            During my studies at RMIT, I became particularly fascinated by
+            JavaScript and the many frameworks that have emerged around it. From
+            React to Next.js, I've immersed myself in the world of JavaScript
+            frameworks, constantly seeking to deepen my knowledge and hone my
+            skills.
           </p>
           <div className='mt-6 flex gap-6'>
             <SocialLink

@@ -34,7 +34,7 @@ export const projects = [
     img: screenshot1,
     title: 'Blogging Website',
     description:
-      'Blogging website with similar features as Medium.com. Commenting below blogs for registered users with reactions and reply options close to Reddit.com',
+      'Blogging website with user profile creation and update functionality. Offers creation of blogs inside the browser with image embedding and text formatting options. Commenting on blogs with reactions and reply functionality',
     technologies: [react, nodejs, materialUi, sequelize],
     demo: 'https://rmit-fwp-assignment-production.up.railway.app/',
     github: 'https://github.com/Mor1209/rmit-fwp-assignment',
@@ -53,9 +53,9 @@ export const projects = [
     id: 3,
     img: screenshotBookeroo,
     title: 'Library Managment System',
-    description: `Team Project completed with four people.
+    description: `Led a team of four in utilizing Scrum, Agile, and Git Flow best practices for project management on Jira and GitHub.
       Customers can rent books online, while staff can keep track of borrowed books.
-      Project hosted on AWS with CI/CD pipeline and 80% coverage with unit and integration tests.`,
+      Project is hosted on AWS with CI/CD pipeline and 80% coverage with unit and integration tests.`,
     technologies: [react, springboot, docker, circleci, jest, figma],
     github: 'https://github.com/Mor1209/sept-group-assignment',
   },
