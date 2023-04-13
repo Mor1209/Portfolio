@@ -36,7 +36,7 @@ export const projects = [
     description:
       'Blogging website with user profile creation and update functionality. Offers creation of blogs inside the browser with image embedding and text formatting options. Commenting on blogs with reactions and reply functionality',
     technologies: [react, nodejs, materialUi, sequelize],
-    demo: 'https://rmit-fwp-assignment-production.up.railway.app/',
+    demo: 'https://blogging-app-flax.vercel.app',
     github: 'https://github.com/Mor1209/rmit-fwp-assignment',
   },
   {
